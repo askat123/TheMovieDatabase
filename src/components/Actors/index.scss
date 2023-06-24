@@ -1,0 +1,11 @@
+#actors{
+  padding: 50px 0;
+  .actors{
+    &--card{
+      background: rgba(73, 70, 70, 0.35);
+      h4{
+        color: white;
+      }
+    }
+  }
+}

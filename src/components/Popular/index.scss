@@ -1,0 +1,17 @@
+#popular{
+  padding: 60px 0;
+  .popular{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+    .pagination{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      gap: 10px;
+    }
+
+}

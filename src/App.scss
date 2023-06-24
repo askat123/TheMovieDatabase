@@ -1,0 +1,33 @@
+@import "components/Header/index";
+@import "components/Home/index";
+@import "components/Footer/index";
+@import "components/TopRated/index";
+@import "components/Popular/index";
+@import "components/MovieCard/index";
+@import "components/Actors/index";
+@import "components/MovieActor/index";
+@import "page/ActorDetails/index";
+@import "page/MovieDetails/index";
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background: url("https://foni.club/uploads/posts/2023-02/1675398457_foni-club-p-fon-zadnii-kino-5.jpg")no-repeat center center fixed;
+  box-shadow: 900px 0 0 900px rgba(0, 0, 0, 0.75) inset;
+  position: static;
+  min-height: 100%;
+  min-width: 100%;
+  background-size: 100%;
+}
+

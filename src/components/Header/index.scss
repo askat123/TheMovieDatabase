@@ -1,0 +1,37 @@
+#header{
+  padding: 30px 0;
+  background: black;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--nav{
+      a{
+        color: #d2c9b8;
+        font-size: 18px;
+        padding: 0 20px;
+        font-weight: 700;
+        .active{
+          color: red;
+        }
+      }
+    }
+    &--inp{
+      input{
+        padding: 8px 15px;
+        border-radius: 20px;
+      }
+      button{
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-weight: 700;
+        border: 2px solid wheat;
+        background: black;
+        color: wheat;
+      }
+    }
+  }
+}

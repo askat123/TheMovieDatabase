@@ -1,0 +1,19 @@
+#person{
+  .person{
+    background: rgba(70, 2, 2, 0.67);
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    &--text{
+      color: #d2c9b8;
+      padding: 30px 10px 0 0;
+      &__group{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 10px;
+        gap: 20px;
+      }
+    }
+  }
+}
