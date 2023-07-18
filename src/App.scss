@@ -3,11 +3,12 @@
 @import "components/Footer/index";
 @import "components/TopRated/index";
 @import "components/Popular/index";
-@import "components/MovieCard/index";
+@import "./components/movieCard/index.scss";
 @import "components/Actors/index";
 @import "components/MovieActor/index";
 @import "page/ActorDetails/index";
 @import "page/MovieDetails/index";
+@import "page/Search/index";
 
 
 

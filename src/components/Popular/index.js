@@ -2,21 +2,27 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {API_KEY} from "../../api";
 import MovieCard from "../movieCard";
+import { useContext } from 'react';
+import { LanguageContext } from '../../context';
 
 const Popular = () => {
     const [popular, setPopular] = useState([])
+    const {language} = useContext(LanguageContext)
     const [count,setCount] = useState(1)
+    const {dark} = useContext(LanguageContext)
     const getPopular = (key) => {
         window.scroll(0,0)
-        axios(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=${count}`)
+        axios(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=${language}&page=${count}`)
             .then((res) => setPopular(res.data.results))
     }
     useEffect(() =>{
         getPopular(API_KEY)
-    } ,[count])
+    } ,[count,language])
     console.log(popular)
     return (
-        <div id="popular">
+        <div id="popular" style={{
+            background: dark ? "white" : "none"
+        }}>
             <div className="container">
                 <div className="popular">
                     {

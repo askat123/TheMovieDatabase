@@ -21,7 +21,10 @@ const MovieActor = ({id}) => {
                     {movieActor.map(el => (
                         <div className="movieActor--card">
                             <Link to={`/movie/details/${el.id}`}>
-                                <img src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${el.poster_path}`} alt=""/>
+                                {  el.poster_path?
+                                    <img src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${el.poster_path}`} alt=""/>
+                                    : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0I5QoFn2U8Dyty2nKzSI-Hkls53U6nf4hEg&usqp=CAU" width={250}  alt='img'/>
+                                }
                             </Link>
                             <h4>{el.title}</h4>
                         </div>

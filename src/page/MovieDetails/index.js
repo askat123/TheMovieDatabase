@@ -7,20 +7,23 @@ import {AiFillHeart, AiFillStar} from "react-icons/ai";
 import {IoBookmarkOutline} from "react-icons/io5";
 import Actors from "../../components/Actors";
 import Videos from "../../components/Videos";
+import { useContext } from 'react';
+import { LanguageContext } from '../../context';
 
 const MovieDetails = () => {
     const {movieId} = useParams()
     console.log(movieId)
     const [details,setDetails] = useState({})
+    const {language} = useContext(LanguageContext)
     const [modal,setModal] = useState(false)
     const getDetails = (key) =>{
-        axios(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=en-US`)
+        axios(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=${language}`)
             .then(res => setDetails(res.data))
     }
     useEffect(() =>{
         console.log(movieId)
         getDetails(API_KEY)
-    }, [])
+    }, [language])
     console.log(details)
     const {title,poster_path,backdrop_path,overview,release_date,genres,runtime,vote_average} = details
 

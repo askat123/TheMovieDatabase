@@ -1,11 +1,21 @@
-import React from 'react';
-import {NavLink} from "react-router-dom";
+import React, { useContext, useState } from 'react';
+import {NavLink, useNavigate} from "react-router-dom";
+import { LanguageContext } from '../../context';
+import {MdDarkMode} from 'react-icons/md';
 
 // function NavLink() {
 //     return null;
 // }
 
 const Header = () => {
+    const [search,setSearch] = useState("")
+    const {language} = useContext(LanguageContext)
+    const {setLanguage} = useContext(LanguageContext)
+    const {dark} = useContext(LanguageContext)
+    const {setDark} = useContext(LanguageContext)
+    const nav = useNavigate()
+    console.log(search)
+    console.log(language)
     return (
         <div id="header">
             <div className="container">
@@ -16,9 +26,27 @@ const Header = () => {
                         <NavLink to={"popular"}>Популярные</NavLink>
                         <NavLink to={"toprated"}>Top Rated</NavLink>
                     </div>
+                    <select onChange={(e) => setLanguage(e.target.value)}>
+                        <option value="en-US">English</option>
+                        <option value="ru-RU">Русский</option>
+                        <option value="fr-FR">France</option>
+                    </select>
+                    <div className='header--dark'>
+                        <button onClick={() => setDark(!dark)}>
+                            <MdDarkMode style={{
+                                padding: "3px 7px",
+                                fontSize: "25px",
+                                color: dark ? "yellow" : "black",
+                                background: "darkred",
+                                border: "none"
+                            }}/>
+                        </button>
+                    </div>
                     <div className="header--inp">
-                        <input type="search"/>
-                        <button>Search</button>
+                        <input type="search" placeholder='search...' onChange={(e) => {
+                            setSearch(e.target.value)
+                        }}/>
+                        <button onClick={() => nav(`/movie/search/${search}`)}>Search</button>
                     </div>
                 </div>
             </div>

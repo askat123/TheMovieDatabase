@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {RiStarSFill} from "react-icons/ri";
+import { useContext } from 'react';
+import { LanguageContext } from '../../context';
 
 const MovieCard = ({el}) => {
     return (
